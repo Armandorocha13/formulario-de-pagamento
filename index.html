@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento - LATAM</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <div class="payment-container">
+        <header class="payment-header">
+            <h2>Escolha seu meio de pagamento</h2>
+        </header>
+        <div class="payment-form">
+            <div class="card-options">
+                <div class="cards">
+                    <label>
+                        <input type="radio" name="payment" id="card" value="cartao" checked>
+                        <i class="fa-brands fa-cc-visa"></i>
+                        <p>cartão</p>
+                    </label>                    
+                    <label>
+                        <input type="radio" name="payment" id="pix" value="pix">
+                        <i class="fa-brands fa-pix"></i>
+                        <p>pix</p>
+                    </label>
+                    <label>
+                        <input type="radio" name="payment" id="boleto" value="boleto">
+                        <i class="fa-solid fa-barcode"></i>
+                        <p>boleto</p>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="form-container">
+                <form>
+                    <div class="form-group">
+                        <label for="card-number">Número do cartão de crédito</label>
+                        <input type="number" id="card-number" placeholder="1111 2222 3333 4444">
+                    </div>
+                    <div class="form-group">
+                        <label for="expiration">Vencimento</label>
+                        <input type="text" id="expiration" placeholder="MM / AAAA">
+                    </div>
+                    <div class="form-group">
+                        <label for="cvc">CVC</label>
+                        <input type="number" id="cvc" placeholder="123">
+                    </div>
+                    <div class="form-group">
+                        <label for="card-holder">Nome do titular do cartão</label>
+                        <input type="text" id="card-holder">
+                    </div>
+                    <div class="form-group">
+                        <label for="country">País de emissão</label>
+                        <select id="country">
+                            <option value="br">Brasil</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="installments">Parcelas</label>
+                        <select id="installments">
+                            <option value="0">Selecione a quantidade de parcelas</option>
+                            <option value="1">1x sem juros</option>
+                            <option value="2">2x sem juros</option>
+                            <option value="3">3x sem juros</option>
+                            <option value="4">4x com juros</option>
+                            <option value="5">5x com juros</option>
+                            <option value="6">6x com juros</option>
+                            <option value="7">7x com juros</option>
+                            <option value="8">8x com juros</option>
+                            <option value="9">9x com juros</option>
+                            <option value="10">10x com juros</option>
+                            <option value="11">11x com juros</option>
+                            <option value="12">12x com juros</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="description-price">
+            <p>Outros serviços: R$ 0,00</p>
+            <p>Juros: 0.2% ao mês</p>
+            <p>Taxas: R$ 0,52</p>
+            <h3>Total a pagar: <span id="price">R$ 00,00</span></h3>
+            <input type="submit" id="comprar" value="Efetuar o pagamento">
+        </div>
+
+        <div id="qr-code" style="display: none;">
+            <img src="./download.png" alt="QR Code PIX">
+            <textarea id="copiaecola" readonly></textarea>
+            <input type="button" id="codigo" value="Copiar código PIX">
+        </div>
+    </div>
+    <div id="message-container" class="message-container"></div>
+    <div class="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+</body>
+
+</html>

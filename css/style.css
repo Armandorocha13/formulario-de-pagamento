@@ -1,0 +1,195 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+.payment-container {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 20px 5px 20px rgba(16, 14, 14, 0.1);
+}
+
+.payment-header {
+    text-align: center;
+    background-color: rgb(16, 109, 222);
+    margin-bottom: 30px;
+    color: #fff;
+    padding: 20px;
+    font-size: 15px;
+    border-radius: 15px;
+}
+
+.payment-form {
+    display: block;
+    margin-bottom: 20px;
+    margin-left: 200px;
+}
+
+.payment-form input[type = radio]{
+    margin-left: 60px;
+}
+
+.card-options {
+    flex: 1;
+}
+
+.card-options label p {
+    font-size: 10px;
+    text-align: center;
+    padding-left: 35px;
+}
+
+.card-options label {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.card-options .cards label {
+    display: inline-block;
+    margin: 5px;
+    font-size: 35px;
+}
+
+form {
+    flex: 2;
+    margin-left: 20px;
+    margin-top: 30px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 70%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.description-price {
+    text-align: right;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+.description-price #comprar {
+    padding: 10px;
+    background-color: rgb(16, 109, 222);
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 300px;
+    margin-top: 30px;
+}
+
+.description-price #comprar:hover {
+    color: #ccc;
+}
+
+/* QR Code */
+#qr-code {
+    margin-top: 20px;
+    margin: 0 auto;
+    align-items: center;
+    display: none;
+    padding-left: 130px;
+    padding-top: 40px;
+}
+
+#qr-code img {
+width: 210px;    
+height: auto;
+padding: 20px;
+}
+
+#codigo {
+        padding: 10px;
+        background-color: rgb(16, 109, 222);
+        color: #fff;
+        font-size: 15px;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        margin-left: 50px;
+        margin-top: 20px;
+       
+    }
+
+
+    /**/
+
+    .loading-overlay {
+        display: none; /* Inicialmente oculto */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1000; /* Acima de todos os outros elementos */
+        justify-content: center;
+        align-items: center;
+    }
+
+    .loading-spinner {
+        border: 8px solid #f3f3f3;
+        border-radius: 50%;
+        border-top: 8px solid #3498db;
+        width: 50px;
+        height: 50px;
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    /* Adiciona estilos para a mensagem de aprovação ou reprovação */
+    .message-container {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        border-radius: 8px;
+        color: #fff;
+        font-size: 18px;
+        text-align: center;
+        z-index: 1000;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    .message-container.approved {
+        background-color: #28a745; /* Verde para aprovação */
+    }
+
+    .message-container.rejected {
+        background-color: #dc3545; /* Vermelho para reprovação */
+    }
+
+    .message-container.show {
+        display: block;
+        opacity: 1;
+    }
+
+    .message-container.hide {
+        opacity: 0;
+    }
